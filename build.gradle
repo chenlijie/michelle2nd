@@ -1,0 +1,94 @@
+group 'michelle2nd'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat'
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.bmuschko:gradle-tomcat-plugin:2.2.2"
+    }
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    tomcatHttpPort = 8090
+    tomcatStopPort = 8091
+    tomcatAjpPort  = 8092
+    tomcatStopKey = 'stopKey'
+    tomcatPath = 'michelle2nd'
+}
+
+project.webAppDirName = 'WebContent'
+
+dependencies {
+    def springVersion = '4.0.3.RELEASE'
+
+    compile "org.springframework:spring-aop:${springVersion}"
+    compile "org.springframework:spring-beans:${springVersion}"
+    compile "org.springframework:spring-context:${springVersion}"
+    compile "org.springframework:spring-context-support:${springVersion}"
+    compile "org.springframework:spring-core:${springVersion}"
+    compile "org.springframework:spring-expression:${springVersion}"
+    compile "org.springframework:spring-jdbc:${springVersion}"
+    compile "org.springframework:spring-orm:${springVersion}"
+    compile "org.springframework:spring-oxm:${springVersion}"
+    compile "org.springframework:spring-tx:${springVersion}"
+    compile "org.springframework:spring-web:${springVersion}"
+    compile "org.springframework:spring-webmvc:${springVersion}"
+
+    def hibernateVersion = '4.1.4.Final'
+    compile "org.hibernate:hibernate-core:${hibernateVersion}"
+    compile 'org.hibernate.common:hibernate-commons-annotations:4.0.1.Final'
+    compile "org.hibernate:hibernate-entitymanager:${hibernateVersion}"
+    compile 'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final'
+
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+    compile 'org.apache.tomcat:tomcat-dbcp:8.0.28'
+    compile 'commons-dbcp:commons-dbcp:1.2.2'
+    compile 'log4j:log4j:1.2.16'
+    compile 'javax.servlet:jstl:1.2'
+    compile fileTree('WebContent/WEB-INF/lib/') {
+
+    }
+
+
+    def tomcatVersion = '8.0.21'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDirs = ['src', 'WebContent/WEB-INF']
+            include '*.properties'
+        }
+    }
+    test {
+        java {
+            srcDir 'test'
+        }
+        resources {
+            srcDir 'test'
+        }
+    }
+}
+
+war {
+    archiveName = 'michelle2nd.war'
+}

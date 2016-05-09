@@ -1,7 +1,11 @@
+.gradle
 .idea
+.tmp
 *.iml
 build/*
 out/*
+build
+classes
 .DS_Store
 .gradle/*
 gradle/*

@@ -8,7 +8,7 @@ apply plugin: 'com.bmuschko.tomcat'
 buildscript {
     repositories {
         maven {
-            url "https://plugins.gradle.org/m2/"
+            url "http://repo1.maven.org/maven2"
         }
     }
     dependencies {
@@ -47,6 +47,12 @@ dependencies {
     compile "org.springframework:spring-web:${springVersion}"
     compile "org.springframework:spring-webmvc:${springVersion}"
 
+    def springSecurityVersion = '4.1.0.RELEASE'
+    compile "org.springframework.security:spring-security-web:${springSecurityVersion}"
+    compile "org.springframework.security:spring-security-config:${springSecurityVersion}"
+    compile "org.springframework.security:spring-security-ldap:${springSecurityVersion}"
+    compile "org.springframework.security:spring-security-taglibs:${springSecurityVersion}"
+
     def hibernateVersion = '4.1.4.Final'
     compile "org.hibernate:hibernate-core:${hibernateVersion}"
     compile 'org.hibernate.common:hibernate-commons-annotations:4.0.1.Final'
@@ -67,6 +73,15 @@ dependencies {
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
             "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
             "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+
+    testCompile 'junit:junit-dep:4.+'
+    testCompile 'org.hamcrest:hamcrest-core:1.+'
+    testCompile 'org.mockito:mockito-core:1.9.+'
+    testCompile 'org.powermock:powermock-module-junit4:1.6.1'
+    testCompile 'org.powermock:powermock-api-mockito:1.6.1'
+    testCompile 'org.assertj:assertj-core:1.7.+'
+    testCompile "org.springframework:spring-test:${springVersion}"
+
 }
 
 sourceSets {

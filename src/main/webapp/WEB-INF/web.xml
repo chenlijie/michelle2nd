@@ -4,6 +4,9 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
   http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
     <!--
       - Location of the XML file that defines the root application context
       - Applied by ContextLoaderListener.
@@ -11,7 +14,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            /WEB-INF/spring/*.xml
+            WEB-INF/spring/applicationContext.xml
         </param-value>
     </context-param>
 
@@ -33,5 +36,4 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-
 </web-app>

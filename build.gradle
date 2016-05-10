@@ -22,9 +22,6 @@ repositories {
 }
 
 ext {
-    tomcatHttpPort = 8090
-    tomcatStopPort = 8091
-    tomcatAjpPort  = 8092
     tomcatStopKey = 'stopKey'
     tomcatPath = 'michelle2nd'
 }
@@ -84,25 +81,6 @@ dependencies {
 
 }
 
-sourceSets {
-    main {
-        java {
-            srcDir 'src'
-        }
-        resources {
-            srcDirs = ['src', 'WebContent/WEB-INF']
-            include '*.properties'
-        }
-    }
-    test {
-        java {
-            srcDir 'test'
-        }
-        resources {
-            srcDir 'test'
-        }
-    }
-}
 
 war {
     archiveName = 'michelle2nd.war'

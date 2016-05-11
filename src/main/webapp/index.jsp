@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./resources/css/bootstrap.css"/>
     <link rel="stylesheet" href="./resources/css/bootstrap-responsive.css"/>
     <link rel="stylesheet" href="./resources/css/global.css"/>
-
 </head>
 
 <body>

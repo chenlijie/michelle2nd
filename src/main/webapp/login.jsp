@@ -5,14 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Michelle 2nd</title>
-    <script type="text/javascript" src="resources/js/jquery-2.2.3.js"></script>
+    <jsp:include page="_meta.jsp"/>
     <script type="text/javascript" src="resources/js/login.js"></script>
-
-    <link rel="stylesheet" href="resources/css/bootstrap.css"/>
-    <link rel="stylesheet" href="resources/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="resources/css/bootstrap-theme.css"/>
-    <link rel="stylesheet" href="resources/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="resources/css/global.css"/>
+    <link rel="stylesheet" href="resources/css/login.css"/>
 </head>
 
 <body>

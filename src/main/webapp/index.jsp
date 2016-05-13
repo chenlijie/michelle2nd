@@ -5,14 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Michelle 2nd</title>
-    <link rel="stylesheet" href="./resources/css/bootstrap.css"/>
-    <link rel="stylesheet" href="./resources/css/bootstrap-responsive.css"/>
-    <link rel="stylesheet" href="./resources/css/global.css"/>
+    <jsp:include page="_meta.jsp"/>
+    <script type="text/javascript" src="resources/js/style.js"></script>
 </head>
 
 <body>
-<div class="container">
-
+<div id="wrapper">
+    <%@include  file="resources/html/navigation.html" %>
+    <%@include  file="resources/html/home.html" %>
 </div>
 </body>
 </html>

@@ -7,4 +7,5 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * Date: 5/11/16
  */
 public class MvcConfig extends WebMvcConfigurerAdapter {
+
 }

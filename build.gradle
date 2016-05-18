@@ -28,6 +28,14 @@ ext {
 
 project.webAppDirName = 'WebContent'
 
+//configurations.all {
+//    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+//        if (details.requested.group == 'org.springframework') {
+//            details.useVersion '4.2.5.RELEASE'
+//        }
+//    }
+//}
+
 dependencies {
     def springVersion = '4.0.3.RELEASE'
 

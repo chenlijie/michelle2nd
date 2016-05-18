@@ -4,22 +4,35 @@
          xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <http pattern="/css/**" security="none"/>
-    <http pattern="/img/**" security="none"/>
-    <http pattern="/components/**" security="none"/>
-    <http pattern="/login.jsp*" security="none"/>
-    <!--delete it when authorization is done-->
-    <http pattern="/js/**" security="none"/>
 
     <authentication-manager >
         <authentication-provider>
             <user-service>
-                <user name="freja"  password="abc123"  authorities="ROLE_USER" />
-                <user name="admin" password="root123" authorities="ROLE_ADMIN" />
-                <user name="dba"   password="root123" authorities="ROLE_ADMIN,ROLE_DBA" />
+                <user name="freja"  password="abc123"  authorities="ROLE_ADMIN" />
+                <user name="nancy" password="abc123" authorities="ROLE_ADMIN" />
+                <user name="guest" password="abc123" authorities="ROLE_GUEST" />
             </user-service>
         </authentication-provider>
     </authentication-manager>
 
+    <http pattern="/components/**" security="none"/>
+    <http pattern="/css/**" security="none"/>
+    <http pattern ="/html/**" security="none"/>
+    <http pattern="/img/**" security="none"/>
+    <http pattern="/js/**" security="none"/>
+    <http pattern="/login.jsp*" security="none"/>
+    <http pattern="/index.jsp*" security="none"/>
+    <!--delete it when authorization is done-->
+    <http>
+        <!--<intercept-url pattern="/login.jsp*" access="isAnonymous()" />-->
+        <intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')" />
+        <headers>
+
+        </headers>
+        <!--<access-denied-handler ref="redirectAccessDenied" />-->
+        <form-login login-page='/login'
+                    default-target-url='/home.html'
+                    always-use-default-target="true"/>
+    </http>
 
 </b:beans>

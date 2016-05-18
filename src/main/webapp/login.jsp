@@ -1,10 +1,6 @@
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Michelle 2nd</title>
     <jsp:include page="_meta.jsp"/>
     <script type="text/javascript" src="resources/js/login.js"></script>
     <link rel="stylesheet" href="resources/css/login.css"/>

@@ -5,6 +5,8 @@
   Time: 4:48 PM
   meta file | links of common resources
 --%>
+<meta charset="UTF-8">
+<title>Michelle 2nd</title>
 <script type="text/javascript" src="resources/js/jquery-2.2.3.js"></script>
 <script type="text/javascript" src="resources/components/metisMenu/dist/metisMenu.min.js"></script>
 

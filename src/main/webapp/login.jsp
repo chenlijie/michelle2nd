@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html lang="en">
 <head>
     <jsp:include page="_meta.jsp"/>
@@ -26,14 +27,14 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
-                                <form id="login-form" action="" method="post" role="form"
+                                <form id="login-form" action="<c:url value='/michelle2nd/index.jsp'/>" method="post" role="form"
                                       style="display: block;">
                                     <div class="form-group">
-                                        <input type="text" name="username" id="login_username" tabindex="1"
+                                        <input type="text" name="login_username" id="login_username" tabindex="1"
                                                class="form-control" placeholder="Username" value="">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" name="password" id="login_password" tabindex="2"
+                                        <input type="password" name="login_password" id="login_password" tabindex="2"
                                                class="form-control" placeholder="Password">
                                     </div>
                                     <div class="form-group text-center">
